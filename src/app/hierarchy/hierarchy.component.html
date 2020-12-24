@@ -1,1 +1,29 @@
-<p>hierarchy works!</p>
+<div class="container mt-5">
+    <button type="button" class="btn btn-secondary" routerLink="/">Back</button>
+    <div class="mt-5">
+        <div class="alert alert-danger" role="alert" *ngIf="error">
+            {{error}}
+        </div>
+        <div class="text-center mb-2" *ngIf="loading">
+            <app-loader></app-loader>
+        </div>
+        <ul *ngIf="!loading">
+            <li>{{ entity?.nodeName }}</li>
+            <ul *ngIf="entity?.children?.length > 0">
+                <li *ngFor="let node of entity?.children">
+                    {{node.nodeName}}
+                    <ul *ngIf="node?.children?.length > 0">
+                        <li *ngFor="let n of node?.children">
+                            {{n?.nodeName}}
+                            <ul *ngIf="n?.children?.length > 0">
+                                <li *ngFor="let n of n?.children">
+                                    {{ n?.nodeName }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+</div>
