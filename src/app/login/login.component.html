@@ -1,1 +1,20 @@
-<p>login works!</p>
+<form class=login_form [formGroup]="loginForm" (submit)="onLoginSubmit()">
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      {{error}}
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" formControlName="username" id="username" aria-describedby="emailHelp" placeholder="Enter username">
+      <small class="error-text" *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('required')">Username is required.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+      <small class="error-text" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">Password is required.</small>
+    </div>
+    <div class="d-flex justify-content-between">
+      <app-loader *ngIf="loading"></app-loader>
+      <span></span>
+      <button type="submit" class="btn btn-primary btn-submit" [disabled]="!loginForm.valid || loading">Login</button>
+    </div>
+</form>

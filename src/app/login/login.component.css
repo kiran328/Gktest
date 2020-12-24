@@ -1,0 +1,10 @@
+.login_form {
+  width: 25%;
+  margin: 5% auto;
+}
+.btn-submit {
+  float: right;
+}
+.error-text {
+  color: red;
+}
