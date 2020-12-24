@@ -1,0 +1,15 @@
+.heading {
+  color: white;
+  font-size: 24px;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0px;
+  position: relative;
+}
+.navbar-nav {
+  align-self: flex-end;
+  position: absolute;
+  right: 50px;
+}
