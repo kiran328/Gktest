@@ -5,11 +5,32 @@
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 18px 0px;
+  padding: 18px 15px;
   position: relative;
 }
 .navbar-nav {
   align-self: flex-end;
   position: absolute;
   right: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.navbar-nav li {
+  padding: 0px 5px;
+}
+
+@media (min-width: 521px) and (max-width: 767px) {
+  .navbar {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 520px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar-nav {
+    align-self: center;
+    position: static;
+  }
 }

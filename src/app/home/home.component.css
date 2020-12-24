@@ -1,0 +1,16 @@
+.card-title {
+  margin: 15px 0px;
+}
+.container {
+  padding: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  margin: 25px;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}

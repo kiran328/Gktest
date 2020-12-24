@@ -2,3 +2,11 @@
 * {
   font-family: "Ubuntu", sans-serif;
 }
+a {
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+a:hover {
+  text-decoration: none !important;
+}
