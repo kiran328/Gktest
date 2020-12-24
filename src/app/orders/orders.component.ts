@@ -10,12 +10,19 @@ import { Order } from './Order.model';
 })
 export class OrdersComponent implements OnInit {
   orders: Order[] = [];
+  loading: boolean;
+  error: string;
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.orderService.getAllOrders()
       .subscribe(orders=>{
+        this.loading = false;
         this.orders = orders;
+      },err=>{
+        this.error = "Something has went wrong";
+        this.loading = false;
       })
   }
 

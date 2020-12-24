@@ -1,7 +1,13 @@
 <div class="container mt-5">
     <button type="button" class="btn btn-secondary" routerLink="/">Back</button>
     <div class="mt-5">
-        <table class="table">
+      <div class="alert alert-danger" role="alert" *ngIf="error">
+        {{error}}
+      </div>
+      <div class="text-center mb-2" *ngIf="loading">
+          <app-loader></app-loader>
+      </div>
+        <table class="table" *ngIf="!loading">
             <thead>
               <tr>
                 <th scope="col">#</th>
