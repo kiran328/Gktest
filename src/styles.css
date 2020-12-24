@@ -10,3 +10,6 @@ a {
 a:hover {
   text-decoration: none !important;
 }
+.error-text {
+  color: red;
+}

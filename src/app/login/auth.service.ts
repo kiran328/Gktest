@@ -19,7 +19,7 @@ export class AuthService {
     return this.http.get<User>(`${environment.app_url}/login?username=${username}&password=${password}`);
   }
 
-  logout(token: string) {
-    return this.http.get<Logout>(`${environment.app_url}/logout?token=${token}`)
+  logout() {
+    return this.http.get<Logout>(`${environment.app_url}/logout`)
   }
 }
